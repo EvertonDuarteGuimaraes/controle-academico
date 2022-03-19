@@ -5,15 +5,14 @@ import coordination.Discipline;
 
 public class Teatcher extends Person {
 
-	private String theDisciplineTeacher;
+	private String teaching;
 	
 	public Teatcher(String name, int registration, String discipline) {
 		super(name, registration);
-		this.theDisciplineTeacher = discipline;
+		this.teaching = discipline;
 	}
 
 	public String getTheDisciplineTeacher() {
-		return theDisciplineTeacher;
+		return teaching;
 	}
-	
 }

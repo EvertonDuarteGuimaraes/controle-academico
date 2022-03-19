@@ -7,28 +7,27 @@ import coordination.Discipline;
 public class Validation {
 	
 	private final static int DISCIPLINES_LIMIT = 3;
+	private final static int CLASSROOMS_LIMIT = 2;
 
-	public boolean validDisciplineRegistration(List<Discipline>  disciplines, Discipline discipline) {
+	public boolean validResistration(List<Discipline>  disciplines, Discipline element) {
 		if(!(disciplines.size() == DISCIPLINES_LIMIT)) {
-			return disciplines.contains(discipline.getName());
-		}
-		return false;
-	}
-	
-	public boolean validDisciplineQuit(List<Discipline>  disciplines, Discipline discipline) {
-		if(!(disciplines.size() == DISCIPLINES_LIMIT)) {
-			if(disciplines.contains(discipline.getName()) && discipline.isStudying()) {
+			if(!disciplines.contains(element) || element.situation().equals("REPROVADO")) {
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	public boolean validDisciplineRetake(List<Discipline>  disciplines, Discipline discipline) {
-		if(!(disciplines.size() == DISCIPLINES_LIMIT)) {
-			if(disciplines.contains(discipline.getName()) && !discipline.isStudying()) {
-				return true;
-			}
+	public boolean validResistration(int classroomsLeading) {
+		if(classroomsLeading < CLASSROOMS_LIMIT) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean validQuit(List<Discipline>  disciplines, Discipline element) {
+		if(element.isStudying() && disciplines.contains(element)) {
+			return true;
 		}
 		return false;
 	}

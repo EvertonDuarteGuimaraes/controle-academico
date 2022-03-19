@@ -12,5 +12,6 @@ public class DataBase {
 	private LinkedList<Student> students = new LinkedList<Student>();
 	private LinkedList<ClassRoom> classRooms = new LinkedList<ClassRoom>();	
 	
+	// registro prof length 3 e reggistro aluno length 4
 }
 

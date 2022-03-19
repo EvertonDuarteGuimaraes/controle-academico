@@ -3,14 +3,15 @@ package coordination;
 public class Discipline {
 	
 	private final String name;
-	private double[]scores = new double[3];
-	private boolean studying;
-		
+	private Double[]scores = new Double[3];
+	private boolean studying = true;
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + (studying ? 1231 : 1237);
 		return result;
 	}
 
@@ -28,6 +29,8 @@ public class Discipline {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (studying != other.studying)
+			return false;
 		return true;
 	}
 
@@ -40,20 +43,42 @@ public class Discipline {
 		return name;
 	}
 	
-	public void setScore(int period, double score) {
-		this.scores[period - 1] = score;
+	public void setNotes(double noteOne, double noteTwo, double noteThree) {
+		this.scores[0] = noteOne;
+		this.scores[1] = noteTwo;
+		this.scores[2] = noteThree;
 	}
 	
-	public double getScore(int period) {
-		return scores[period - 1];
+	public Double[] getAllScores() {
+		return this.scores;
+	}
+	
+	public double getSingleScore(int position) {
+		return scores[position];
 	}
 
-	public double getAverege() {
-		double averege = 0;
-		for(double score : this.scores) {
-			averege += score;
+	public Double getAverege() {
+		Double averege = 0.0;
+		for(Double score : this.scores) {
+			if(score != null) {
+				averege += score;
+			}
 		}
-		return averege / scores.length;
+		if(averege != null) {
+			return averege = averege/ scores.length;
+		}
+		return null;
+	}
+	
+	public String situation() {
+		if(!this.isStudying()) {
+			if(this.getAverege() >= 5) {
+				return "APROVADO";
+			} else if (this.getAverege() < 5) {
+				return "REPROVADO";
+			}			
+		} 
+		return "CURSANDO";
 	}
 
 	public boolean isStudying() {

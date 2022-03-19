@@ -11,23 +11,15 @@ public class Student extends Person {
 		super(name, registration);
 	}
 	
-	public void register(Discipline discipline) {
-		ownNoteBook.addNewDiscipline(discipline);
+	public void register(Discipline element) {
+		ownNoteBook.addNewDiscipline(element);
 	}
 	
-	public void quit(Discipline discipline) {
-		ownNoteBook.quitDiscipline(discipline);
+	public void score(Discipline discipline, double noteOne, double noteTwo, double noteThree) throws Exception {
+		ownNoteBook.addScoreTo(discipline, noteOne, noteTwo, noteThree);
 	}
 	
-	public void retake(Discipline discipline) {
-		ownNoteBook.retakeDiscipline(discipline);;
-	}
-	
-	public String reportCard() {
-		return ownNoteBook.showReportCard();
-	}
-	
-	public String historic() {
-		return ownNoteBook.showHistoric();
+	public void quit(Discipline element) throws Exception {
+		ownNoteBook.quitDiscipline(element);
 	}
 }
