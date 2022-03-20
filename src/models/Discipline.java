@@ -1,10 +1,13 @@
-package coordination;
+package models;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Discipline {
-	
 	private final String name;
-	private Double[]scores = new Double[3];
 	private boolean studying = true;
+	
+	private List<Double> scores = new ArrayList<>();
 
 	@Override
 	public int hashCode() {
@@ -42,20 +45,6 @@ public class Discipline {
 	public String getName() {
 		return name;
 	}
-	
-	public void setNotes(double noteOne, double noteTwo, double noteThree) {
-		this.scores[0] = noteOne;
-		this.scores[1] = noteTwo;
-		this.scores[2] = noteThree;
-	}
-	
-	public Double[] getAllScores() {
-		return this.scores;
-	}
-	
-	public double getSingleScore(int position) {
-		return scores[position];
-	}
 
 	public Double getAverege() {
 		Double averege = 0.0;
@@ -65,7 +54,7 @@ public class Discipline {
 			}
 		}
 		if(averege != null) {
-			return averege = averege/ scores.length;
+			return averege = averege/ scores.size();
 		}
 		return null;
 	}
@@ -87,5 +76,17 @@ public class Discipline {
 
 	public void setStudying(boolean studying) {
 		this.studying = studying;
-	}	
+	}
+
+	public List<Double> getScores() {
+		return scores;
+	}
+
+	public void setScore(Double score) {
+		for(Double element : this.scores) {
+			if(element.equals(null)) {
+				this.scores.add(score);
+			}
+		}
+	}
 }

@@ -1,21 +1,21 @@
-package humanResourcesDepartment;
+package models;
 
 abstract class Person {
-	
+
 	private final String name;
-	private final int registration;
+	private final Integer registration;
 	
-	public Person(String name, int registration) {
+	public Person(String name, Integer registration) {
 		super();
 		this.name = name;
 		this.registration = registration;
 	}
-	
+
 	public String getName() {
 		return name;
-	}	
-	
-	public int getRegistration() {
+	}
+
+	public Integer getRegistration() {
 		return registration;
-	}	
+	}
 }

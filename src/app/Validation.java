@@ -2,7 +2,7 @@ package app;
 
 import java.util.List;
 
-import coordination.Discipline;
+import models.Discipline;
 
 public class Validation {
 	
