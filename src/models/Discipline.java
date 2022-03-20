@@ -58,17 +58,6 @@ public class Discipline {
 		}
 		return null;
 	}
-	
-	public String situation() {
-		if(!this.isStudying()) {
-			if(this.getAverege() >= 5) {
-				return "APROVADO";
-			} else if (this.getAverege() < 5) {
-				return "REPROVADO";
-			}			
-		} 
-		return "CURSANDO";
-	}
 
 	public boolean isStudying() {
 		return studying;
@@ -83,10 +72,6 @@ public class Discipline {
 	}
 
 	public void setScore(Double score) {
-		for(Double element : this.scores) {
-			if(element.equals(null)) {
-				this.scores.add(score);
-			}
-		}
+		this.scores.add(score);
 	}
 }

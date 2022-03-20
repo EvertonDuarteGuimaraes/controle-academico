@@ -17,11 +17,11 @@ public class Teacher extends Person {
 		return classrooms;
 	}
 
-	public void setClassrooms(List<Integer> classrooms) {
-		this.classrooms = classrooms;
-	}
-
 	public String getDiscipline() {
 		return discipline;
+	}
+	
+	public void setClassrooms(Integer classroomNumber) {
+		this.classrooms.add(classroomNumber);
 	}
 }

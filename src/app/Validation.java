@@ -11,7 +11,7 @@ public class Validation {
 
 	public boolean validResistration(List<Discipline>  disciplines, Discipline element) {
 		if(!(disciplines.size() == DISCIPLINES_LIMIT)) {
-			if(!disciplines.contains(element) || element.situation().equals("REPROVADO")) {
+			if(!disciplines.contains(element) || element.isStudying()) {
 				return true;
 			}
 		}

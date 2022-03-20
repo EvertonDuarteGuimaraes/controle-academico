@@ -30,7 +30,11 @@ public class Classroom {
 		return this.classroomNumber;
 	}
 
-	public List<Integer> getEnrolledStudents() {
+	public List<Integer> getStudents() {
 		return this.students;
+	}
+	
+	public void setStudents(Integer registration) {
+		this.students.add(registration);
 	}
 }

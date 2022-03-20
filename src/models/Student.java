@@ -9,10 +9,9 @@ public class Student extends Person {
 
 	public Student(String name, Integer registration) {
 		super(name, registration);
-
 	}
 
 	public List<Discipline> getDisciplines() {
-		return disciplines;
+		return this.disciplines;
 	}		
 }
