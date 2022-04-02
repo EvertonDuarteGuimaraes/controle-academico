@@ -13,5 +13,5 @@ public class Student extends Person {
 
 	public List<Discipline> getDisciplines() {
 		return this.disciplines;
-	}		
+	}
 }
